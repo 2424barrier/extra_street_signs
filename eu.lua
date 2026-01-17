@@ -317,6 +317,6 @@ for k, v in pairs(signs) do
 	else
 		error("Invalid signs table in eu.lua; must be normal or big.")
 	end
-	core.register_alias("streets:" .. ":" .. name, modname .. ":" .. name)
-	core.register_alias("streets:" .. ":" .. name .. "_polemount", modname .. ":" .. name .. "_polemount")
+	core.register_alias("streets" .. ":" .. name, modname .. ":" .. name)
+	core.register_alias("streets" .. ":" .. name .. "_polemount", modname .. ":" .. name .. "_polemount")
 end
