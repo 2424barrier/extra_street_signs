@@ -98,4 +98,6 @@ local aliases = {
 for k,v in pairs(aliases) do
 	core.register_alias("extra_street_signs:" .. k, "extra_street_signs:" .. v)
 	core.register_alias("extra_street_signs:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
+	core.register_alias("streets:" .. k, "extra_street_signs:" .. v)
+	core.register_alias("streets:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
 end
