@@ -314,6 +314,8 @@ for k, v in pairs(signs) do
 		}
 		core.register_node(modname .. ":" .. name, def)
 		core.register_node(modname .. ":" .. name .. "_polemount", poledef)
+		core.register_alias("streets:" .. ":" .. name, modname .. ":" .. name)
+		core.register_alias("streets:" .. ":" .. name .. "_polemount", modname .. ":" .. name .. "_polemount")
 	else
 		error("Invalid signs table in eu.lua; must be normal or big.")
 	end
