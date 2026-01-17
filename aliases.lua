@@ -33,8 +33,8 @@ local aliases = {
 	["sign_eu_firstaid"] = "sign_eu_first_aid",
 	["sign_eu_givewayoncoming"] = "sign_eu_give_way_oncoming",
 	["sign_eu_greenarrow"] = "sign_eu_green_arrow",
-	["sign_eu_guideboardleft"] = "sign_eu_guide_board_left",
-	["sign_eu_guideboardright"] = "sign_eu_guide_board_right",
+	["sign_eu_guideboard_left"] = "sign_eu_guide_board_left",
+	["sign_eu_guideboard_right"] = "sign_eu_guide_board_right",
 	["sign_eu_highwayend"] = "sign_eu_highway_end",
 	["sign_eu_intersectionrightofway"] = "sign_eu_intersection_right_of_way",
 	["sign_eu_laneshift"] = "sign_eu_lane_shift",
@@ -98,4 +98,6 @@ local aliases = {
 for k,v in pairs(aliases) do
 	core.register_alias("extra_street_signs:" .. k, "extra_street_signs:" .. v)
 	core.register_alias("extra_street_signs:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
+	core.register_alias("streets:" .. k, "extra_street_signs:" .. v)
+	core.register_alias("streets:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
 end
