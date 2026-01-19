@@ -288,7 +288,7 @@ for k, v in pairs(signs) do
 			paramtype = "light",
 			paramtype2 = "facedir",
 			tiles = {
-				"extra_signs_" .. name .. "_inv.png",
+				"extra_signs_" .. name .. ".png",
 				"extra_signs_"
 					.. name
 					.. ".png"
