@@ -1,12 +1,12 @@
 unused_args = false
-allow_defined_top = true
-max_line_length = 999
 
 globals = {
-	"extra_street_signs", "minetest", "core",
+	"extra_street_signs",
 }
 
 read_globals = {
+	"core",
+	"minetest",
 	"default",
 	"ItemStack",
 	"dump",
