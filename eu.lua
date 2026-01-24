@@ -1,5 +1,5 @@
 local modname = "extra_street_signs"
-local signs = {
+extra_street_signs.eu_signs = {
 	{ "sign_eu_10", "EU sign: Speed Limit 10", "normal" },
 	{ "sign_eu_30", "EU sign: Speed Limit 30", "normal" },
 	{ "sign_eu_30_zone", "EU sign: 30 Zone", "normal" },
@@ -96,7 +96,6 @@ local signs = {
 	{ "sign_eu_shared_pedestrians_bicyclists", "EU sign: Pedestrians and cyclists on shared path", "normal" },
 	{ "sign_eu_slip_danger", "EU sign: Skid risk", "normal" },
 	{ "sign_eu_st_andrews", "EU sign: St Andrew's Cross", "big" },
-	{ "sign_eu_stop", "EU sign: STOP", "normal" },
 	{ "sign_eu_straight_left_only", "EU sign: Straight and left only", "normal" },
 	{ "sign_eu_straight_only", "EU sign: Straight only", "normal" },
 	{ "sign_eu_straight_right_only", "EU sign: Straight and right only", "normal" },
@@ -116,7 +115,11 @@ local signs = {
 	{ "sign_eu_yield", "EU sign: Yield", "normal" },
 }
 
-local polemount_nodes = {
+if not core.get_modpath("street_signs") then
+	table.insert(extra_street_signs.eu_signs, { "sign_eu_stop", "EU sign: STOP", "normal" })
+end
+
+extra_street_signs.polemount_nodes = {
 	["streets:bigpole"] = true,
 	["technic:concrete_post"] = true,
 	["default:fence_acacia_wood"] = true,
@@ -154,7 +157,7 @@ local polemount_nodes = {
 	["homedecor:pole_brass"] = true,
 }
 
-for k, v in pairs(signs) do
+for k, v in pairs(extra_street_signs.eu_signs) do
 	local name = v[1]
 	local desc = v[2]
 	local sign_type = v[3]
@@ -177,7 +180,7 @@ for k, v in pairs(signs) do
 			drop = "extra_street_signs:" .. name,
 			use_texture_alpha = "clip",
 			drawtype = "mesh",
-			mesh = "sign.obj",
+			mesh = "sign_new.obj",
 			inventory_image = "extra_signs_" .. name .. ".png",
 			selection_box = {
 				type = "fixed",
@@ -187,6 +190,7 @@ for k, v in pairs(signs) do
 				type = "fixed",
 				fixed = { -1 / 2, -1 / 2, 0.5, 1 / 2, 1 / 2, 0.45 },
 			},
+			sounds = default.node_sound_metal_defaults(),
 			after_place_node = function(pos)
 				local target_pos = { x = pos.x, y = pos.y, z = pos.z }
 				local node = core.get_node(pos)
@@ -200,7 +204,7 @@ for k, v in pairs(signs) do
 					target_pos.x = target_pos.x - 1
 				end
 				local target_node = core.get_node(target_pos)
-				if polemount_nodes[target_node.name] then
+				if extra_street_signs.polemount_nodes[target_node.name] then
 					core.swap_node(pos, { name = node.name .. "_polemount", param2 = node.param2 })
 				end
 			end,
@@ -233,6 +237,7 @@ for k, v in pairs(signs) do
 				type = "fixed",
 				fixed = { -1 / 2, -1 / 2, 0.8, 1 / 2, 1 / 2, 0.85 },
 			},
+			sounds = default.node_sound_metal_defaults(),
 		}
 		core.register_node(modname .. ":" .. name, def)
 		core.register_node(modname .. ":" .. name .. "_polemount", poledef)
@@ -265,6 +270,7 @@ for k, v in pairs(signs) do
 				type = "fixed",
 				fixed = { -1 / 2, -1 / 2, 0.5, 1 / 2, 1 / 2, 0.45 },
 			},
+			sounds = default.node_sound_metal_defaults(),
 			after_place_node = function(pos)
 				local target_pos = { x = pos.x, y = pos.y, z = pos.z }
 				local node = core.get_node(pos)
@@ -278,7 +284,7 @@ for k, v in pairs(signs) do
 					target_pos.x = target_pos.x - 1
 				end
 				local target_node = core.get_node(target_pos)
-				if polemount_nodes[target_node.name] then
+				if extra_street_signs.polemount_nodes[target_node.name] then
 					core.swap_node(pos, { name = node.name .. "_polemount", param2 = node.param2 })
 				end
 			end,
@@ -311,6 +317,7 @@ for k, v in pairs(signs) do
 				type = "fixed",
 				fixed = { -1 / 2, -1 / 2, 0.8, 1 / 2, 1 / 2, 0.85 },
 			},
+			sounds = default.node_sound_metal_defaults(),
 		}
 		core.register_node(modname .. ":" .. name, def)
 		core.register_node(modname .. ":" .. name .. "_polemount", poledef)
