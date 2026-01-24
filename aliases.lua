@@ -104,4 +104,5 @@ end
 
 if core.get_modpath("street_signs") then
 	core.register_alias("extra_street_signs:sign_eu_stop", "street_signs:sign_stop")
+	core.register_alias("extra_street_signs:sign_eu_stop_polemount", "street_signs:sign_stop_onpole")
 end
