@@ -180,7 +180,7 @@ for k, v in pairs(extra_street_signs.eu_signs) do
 			drop = "extra_street_signs:" .. name,
 			use_texture_alpha = "clip",
 			drawtype = "mesh",
-			mesh = "sign_new.obj",
+			mesh = "sign.obj",
 			inventory_image = "extra_signs_" .. name .. ".png",
 			selection_box = {
 				type = "fixed",
