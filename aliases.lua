@@ -92,10 +92,9 @@ extra_street_signs.aliases = {
 	["sign_eu_turningprioroad4"] = "sign_eu_turning_prio_road_4",
 	["sign_eu_twowaytraffic"] = "sign_eu_two_way_traffic",
 	["sign_eu_uphillgrade"] = "sign_eu_up_hill_grade",
-
 }
 
-for k,v in pairs(extra_street_signs.aliases) do
+for k, v in pairs(extra_street_signs.aliases) do
 	core.register_alias("extra_street_signs:" .. k, "extra_street_signs:" .. v)
 	core.register_alias("extra_street_signs:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
 	core.register_alias("streets:" .. k, "extra_street_signs:" .. v)
