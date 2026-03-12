@@ -166,6 +166,7 @@ for k, v in pairs(extra_street_signs.eu_signs) do
 			description = desc,
 			paramtype = "light",
 			paramtype2 = "facedir",
+			is_ground_content = false,
 			tiles = {
 				"extra_signs_" .. name .. ".png",
 				"extra_signs_"
@@ -213,6 +214,7 @@ for k, v in pairs(extra_street_signs.eu_signs) do
 			description = desc,
 			paramtype = "light",
 			paramtype2 = "facedir",
+			is_ground_content = false,
 			tiles = {
 				"extra_signs_" .. name .. ".png",
 				"extra_signs_"
@@ -246,6 +248,7 @@ for k, v in pairs(extra_street_signs.eu_signs) do
 			description = desc,
 			paramtype = "light",
 			paramtype2 = "facedir",
+			is_ground_content = false,
 			tiles = {
 				"extra_signs_" .. name .. ".png",
 				"extra_signs_"
@@ -293,6 +296,7 @@ for k, v in pairs(extra_street_signs.eu_signs) do
 			description = desc,
 			paramtype = "light",
 			paramtype2 = "facedir",
+			is_ground_content = false,
 			tiles = {
 				"extra_signs_" .. name .. ".png",
 				"extra_signs_"
