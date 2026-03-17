@@ -153,6 +153,7 @@ extra_street_signs.polemount_nodes = {
 	["usesdirt:dirt_fence"] = true,
 	["usesdirt:dirt_stone_fence"] = true,
 	["bobblocks:pole"] = true,
+	["bobblocks:pole_off"] = true,
 	["bobblocks:wavypole"] = true,
 	["homedecor:pole_brass"] = true,
 }
