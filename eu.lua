@@ -115,10 +115,6 @@ extra_street_signs.eu_signs = {
 	{ "sign_eu_yield", "EU sign: Yield", "normal" },
 }
 
-if not core.get_modpath("street_signs") then
-	table.insert(extra_street_signs.eu_signs, { "sign_eu_stop", "EU sign: STOP", "normal" })
-end
-
 for k, v in pairs(extra_street_signs.eu_signs) do
 	local name = v[1]
 	local desc = v[2]

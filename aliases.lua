@@ -100,8 +100,3 @@ for k, v in pairs(extra_street_signs.aliases) do
 	core.register_alias("streets:" .. k, "extra_street_signs:" .. v)
 	core.register_alias("streets:" .. k .. "_polemount", "extra_street_signs:" .. v .. "_polemount")
 end
-
-if core.get_modpath("street_signs") then
-	core.register_alias("extra_street_signs:sign_eu_stop", "street_signs:sign_stop")
-	core.register_alias("extra_street_signs:sign_eu_stop_polemount", "street_signs:sign_stop_onpole")
-end
