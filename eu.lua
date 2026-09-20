@@ -113,6 +113,7 @@ extra_street_signs.eu_signs = {
 	{ "sign_eu_walkway", "EU sign: Walkway", "normal" },
 	{ "sign_eu_wc", "EU sign: Public toilet", "normal" },
 	{ "sign_eu_yield", "EU sign: Yield", "normal" },
+	{ "sign_eu_stop", "EU sign: STOP", "normal" },
 }
 
 for k, v in pairs(extra_street_signs.eu_signs) do
